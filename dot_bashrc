@@ -104,6 +104,15 @@ alias dv="dotenvx"
 alias dvr="dotenvx run"
 alias dvg="dotenvx get"
 
+## Chezmoi
+
+alias chs="chezmoi status"
+alias che="chezmoi edit"
+alias chc="chezmoi cd"
+alias chad="chezmoi add"
+alias chap="chezmoi apply"
+alias chupd="chezmoi update"
+alias chpush="chezmoi cd && git add . && git commit -m 'update dotfiles' && git push"
 
 shopt -s extglob
 
