@@ -39,8 +39,10 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
-export GOPATH="$(go env GOPATH)"
-export PATH="$(go env GOPATH)/bin:$PATH"
+if [ -z "$(command -v go)" ]; then
+    export GOPATH="$(go env GOPATH)"
+    export PATH="$(go env GOPATH)/bin:$PATH"
+fi
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.local/share"
 
@@ -51,17 +53,6 @@ export JDK21="$JAVA_BASE/graalvm-21"
 
 export java17="$JDK17/bin/java"
 export java21="$JDK21/bin/java"
-
-. "$HOME/.cargo/env"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-source ~/.local/share/blesh/ble.sh
-
-eval "$(starship init bash)"
-eval "$(zoxide init bash)"
-eval "$(atuin init bash)"
-eval "$(direnv hook bash)"
 
 # Turso
 export PATH="$PATH:$HOME/.turso"
@@ -76,7 +67,20 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
 . "$HOME/.deno/env"
+
+. "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source ~/.local/share/blesh/ble.sh
+
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+eval "$(atuin init bash)"
+eval "$(direnv hook bash)"
+
 
 alias userctl="systemctl --user"
 alias cd="z"
@@ -105,7 +109,6 @@ alias dvr="dotenvx run"
 alias dvg="dotenvx get"
 
 ## Chezmoi
-
 alias ch="chezmoi"
 alias chs="chezmoi status"
 alias che="chezmoi edit"
