@@ -9,8 +9,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Install eza
 wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+mkdir -p ~/.local/bin
 mv eza ~/.local/bin/eza
-
 
 ## Chezmoi runtime
 # -e: exit on error
