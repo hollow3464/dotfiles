@@ -1,12 +1,13 @@
-# install ble.sh
-# gawk is required
+# install system deps
 {{  if eq .chezmoi.os "linux" }}
 {{   if eq .chezmoi.osRelease.id "debian" }}
-sudo apt update -y && sudo apt install -y gawk
+sudo apt update -y && sudo apt install -y gawk unzip
 {{   else if eq .chezmoi.osRelease.id "fedora" }}
-sudo dnf sync && sudo dnf install -y gawk
+sudo dnf sync && sudo dnf install -y gawk unzip
 {{   end }}
 {{ end }}
+
+# install ble.sh
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX=~/.local
 echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc
@@ -24,3 +25,6 @@ mv eza ~/.local/bin/eza
 
 # install zoxide
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+# install bun
+curl -fsSL https://bun.sh/install | bash
