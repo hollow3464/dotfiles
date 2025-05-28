@@ -1,0 +1,109 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+unset rc
+
+export EDITOR="nvim"
+export GTK_USE_PORTAL=1
+
+export FLYCTL_INSTALL="$HOME/.fly"
+export VOLTA_HOME="$HOME/.volta"
+
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/go/bin:$PATH"
+export PATH="$HOME/.local/share/flatpak/exports/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+export GOPATH="$(go env GOPATH)"
+export PATH="$(go env GOPATH)/bin:$PATH"
+
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.local/share"
+
+export JAVA_BASE=$HOME/Apps/Java
+
+export JDK17="$JAVA_BASE/graalvm-jdk-17"
+export JDK21="$JAVA_BASE/graalvm-21"
+
+export java17="$JDK17/bin/java"
+export java21="$JDK21/bin/java"
+
+. "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source ~/.local/share/blesh/ble.sh
+
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+eval "$(atuin init bash)"
+eval "$(direnv hook bash)"
+
+# Turso
+export PATH="$PATH:$HOME/.turso"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+. "$HOME/.deno/env"
+
+alias userctl="systemctl --user"
+alias cd="z"
+alias tbx="toolbox enter"
+alias tbr="toolbox run"
+alias work="sudo tailscale switch f17f --operator hollow3464"
+alias home="sudo tailscale switch 1ce6 --operator hollow3464"
+alias redev="git rebase dev"
+alias redevpush="git rebase dev && git push"
+alias ls="eza --group-directories-first"
+alias fedit="fzf --bind 'enter:become(nvim {})'"
+alias hedit="fzf --bind 'enter:become(hx {})'"
+alias vedit="fzf --bind 'enter:become(neovide {})'"
+alias wez="flatpak run org.wezfurlong.wezterm"
+alias ar="php artisan"
+alias co="composer"
+alias cor="composer run"
+alias shad="bunx --bun shadcn-vue@latest"
+alias systemd-podman-check="/usr/lib/systemd/system-generators/podman-system-generator --dryrun"
+alias pgloader="podman run --rm -it -v /tmp:/tmp ghcr.io/dimitri/pgloader:latest pgloader"
+alias mariadb="podman exec -it systemd-mariadb mariadb"
+
+## Dotenvx
+alias dv="dotenvx"
+alias dvr="dotenvx run"
+alias dvg="dotenvx get"
+
+
+shopt -s extglob
+

@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 d350db2449da40df003c40d440f909d74e2d4e70 Holly <daved3464@gmail.com> 1746809027 -0500	clone: from https://github.com/nvim-lua/kickstart.nvim.git
+d350db2449da40df003c40d440f909d74e2d4e70 a70d8c71c35ed12a361fb18465c3399a3dcaeedf Holly <daved3464@gmail.com> 1748366690 -0500	commit: tweak lsp
+a70d8c71c35ed12a361fb18465c3399a3dcaeedf c70862238e42541bcd1970da4c66dc9463f0f3bd Holly <daved3464@gmail.com> 1748366698 -0500	commit: add oil and zenbones
+c70862238e42541bcd1970da4c66dc9463f0f3bd 3338d3920620861f8313a2745fd5d2be39f39534 Holly <daved3464@gmail.com> 1748366718 -0500	pull --rebase=interactive (start): checkout 3338d3920620861f8313a2745fd5d2be39f39534
+3338d3920620861f8313a2745fd5d2be39f39534 6612fb8b18d7935b3cca9c62600efce1f15ede0f Holly <daved3464@gmail.com> 1748366718 -0500	pull --rebase=interactive (pick): tweak lsp
+6612fb8b18d7935b3cca9c62600efce1f15ede0f f24357f5c6f417b8616b07843957adc54461d11c Holly <daved3464@gmail.com> 1748366718 -0500	pull --rebase=interactive (pick): add oil and zenbones
+f24357f5c6f417b8616b07843957adc54461d11c f24357f5c6f417b8616b07843957adc54461d11c Holly <daved3464@gmail.com> 1748366718 -0500	pull --rebase=interactive (finish): returning to refs/heads/master
