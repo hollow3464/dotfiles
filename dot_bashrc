@@ -79,8 +79,6 @@ source ~/.local/share/blesh/ble.sh
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 eval "$(atuin init bash)"
-eval "$(direnv hook bash)"
-
 
 alias userctl="systemctl --user"
 alias cd="z"

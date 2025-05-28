@@ -1,5 +1,18 @@
 #!/bin/sh
 
+# Install utils
+## Install atuin
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+## Install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+## Install eza
+wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+sudo mv eza ~./local/bin/eza
+
+
+## Chezmoi runtime
 # -e: exit on error
 # -u: exit on unset variables
 set -eu
