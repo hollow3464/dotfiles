@@ -106,6 +106,7 @@ alias dvg="dotenvx get"
 
 ## Chezmoi
 
+alias ch="chezmoi"
 alias chs="chezmoi status"
 alias che="chezmoi edit"
 alias chc="chezmoi cd"
